@@ -5,11 +5,16 @@
             <div v-for="(item, index) in newsroom.articles" class="">
                 <div class="col offset-1">
                     <div class="card mt-4" style="width: 20rem;">
+                        <div class="card-header">
+                            <span class="card-text text-muted">{{ newsroom.articles[index].source.name }}</span>
+                        </div>
                         <img v-bind:src="newsroom.articles[index].urlToImage" alt="" class="card-img-top">
                         <div class="card-body">
-                            <h5 class="card-title">{{ newsroom.articles[index].title }}</h5>
+                            <a v-bind:href="newsroom.articles[index].url" class="card-title">
+                                <h5>{{ newsroom.articles[index].title }}</h5>
+                            </a>
                             <p class="card-text">{{ newsroom.articles[index].description }}</p>
-                            <a v-bind:href="newsroom.articles[index].url" class="btn btn-primary">Read the article.</a>
+                            
                         </div>
                     </div>
                 </div>
