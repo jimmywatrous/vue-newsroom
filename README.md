@@ -1,7 +1,7 @@
 # vue-news-app
 
-> An app to display data from News API
-> Currently displays the Top 20 US headlines.
+> An app to display data from News API  
+Currently displays the Top 20 US headlines.
 
 ## Build Setup
 
