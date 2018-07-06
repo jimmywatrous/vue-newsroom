@@ -23,19 +23,35 @@
 
 <script>
 import API from '@/lib/api'
+import { EventBus } from '@/lib/eventbus'
+
+
 
 export default {
     name: 'NewsRoom',
     data() {
         return {
-            newsroom: {}
+            newsroom: null
         };
     },
+    
     
     mounted() {
         API.getHeadlines().then(result => {
             this.newsroom = result;
         });
+        EventBus.$on('search', query => {
+            this.queryArticles(query)
+        })
+        
+    },
+    
+    methods: {
+        queryArticles(query) {
+            API.queryHeadlines(query).then(result => {
+                this.newsroom = result;
+            })
+        }
     }
 }
     
