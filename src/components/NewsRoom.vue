@@ -17,7 +17,7 @@
                     </div>
             </div>
         </div>
-        <pre>{{newsroom}}</pre>
+        <!--<pre>{{newsroom}}</pre>-->
     </div>
 </template>
 
